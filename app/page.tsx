@@ -29,9 +29,9 @@ function SocialLinks() {
     <div className="flex flex-wrap gap-2">
       <a href="#contact" aria-label="Send Joseph an email" className="pill"><Mail size={14} /> Email</a>
       <a href="#contact" aria-label="Find Joseph on Fiverr" className="pill"><span aria-hidden="true">fi</span> Fiverr</a>
-      <a href="#contact" aria-label="Find Joseph on X" className="pill"><span aria-hidden="true">𝕏</span> X</a>
-      <a href="#contact" aria-label="Find Joseph on GitHub" className="pill"><span aria-hidden="true">⌘</span> GitHub</a>
-      <a href="#contact" aria-label="Open Joseph's LinkedIn" className="pill"><span aria-hidden="true">in</span> LinkedIn</a>
+      <a href="#contact" aria-label="Find Joseph on X" className="pill"><span className="social-mark" aria-hidden="true">𝕏</span> X</a>
+      <a href="#contact" aria-label="Find Joseph on GitHub" className="pill"><span className="social-mark" aria-hidden="true">⌘</span> GitHub</a>
+      <a href="#contact" aria-label="Open Joseph's LinkedIn" className="pill"><span className="social-mark" aria-hidden="true">in</span> LinkedIn</a>
     </div>
   )
 }
