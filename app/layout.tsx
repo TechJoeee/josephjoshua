@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   openGraph: { title: 'Joseph Joshua — Fullstack Developer & AI Designer', description: 'Building digital products with clarity, character, and intelligent details.', type: 'website' },
 }
 
-export const viewport: Viewport = { colorScheme: 'light', themeColor: '#f5f5f3', width: 'device-width', initialScale: 1 }
+export const viewport: Viewport = { colorScheme: 'dark', themeColor: '#101010', width: 'device-width', initialScale: 1 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className="bg-[#f5f5f3]"><body className="antialiased">{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
+  return <html lang="en" className="bg-[#101010]"><body className="antialiased">{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
 }
