@@ -1,47 +1,92 @@
-export default function Page() {
+'use client'
+
+import { useState } from 'react'
+import { ArrowDownRight, ArrowUpRight, Mail, Menu, X } from 'lucide-react'
+
+const projects = [
+  { title: 'BloomCare — Mental Health App', type: 'Product Landing Page', image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=85', tag: 'REAL PROJECT', tone: 'dark' },
+  { title: 'FrayWater — Luxury Fragrance', type: 'Brand Experience', image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1200&q=85', tag: 'REAL PROJECT', tone: 'cream' },
+  { title: 'CryptoCalm — Investment Dashboard', type: 'Fintech Dashboard', image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=85', tag: 'EXPLORATION', tone: 'dark' },
+  { title: 'Spenso — Personal Finance with AI', type: 'Mobile Product', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85', tag: 'REAL PROJECT', tone: 'light' },
+]
+
+const services = [
+  ['UI/UX Design', 'Clear, scalable interfaces for products people enjoy using.'],
+  ['Web Design & Development', 'Thoughtful websites that turn attention into action.'],
+  ['Branding', 'Visual identities with a point of view and room to grow.'],
+  ['Motion & Animations', 'Small moments of motion that make digital feel alive.'],
+]
+
+const experience = [
+  ['Independent Studio', 'Fullstack Developer & AI Designer', '2024 — Now'],
+  ['Mikan Team', 'Creative Technologist', '2022 — 2024'],
+  ['Microsoft', 'Product Designer', '2020 — 2022'],
+  ['Digital Atelier', 'Interaction Designer', '2018 — 2020'],
+]
+
+function SocialLinks() {
   return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="#contact" aria-label="Send Joseph an email" className="pill"><Mail size={14} /> Email</a>
+      <a href="#work" aria-label="See Joseph's work" className="pill"><span aria-hidden="true">◌</span> Dribbble</a>
+      <a href="#contact" aria-label="Open Joseph's LinkedIn" className="pill"><span aria-hidden="true">in</span> LinkedIn</a>
+    </div>
+  )
+}
+
+export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeService, setActiveService] = useState(0)
+
+  return (
+    <main>
+      <nav className="nav-shell">
+        <a className="availability" href="#contact"><span /> Available for New Project</a>
+        <div className={`nav-links ${menuOpen ? 'is-open' : ''}`}>
+          <a href="#work" onClick={() => setMenuOpen(false)}>Work <sup>[04]</sup></a>
+          <a href="#services" onClick={() => setMenuOpen(false)}>Services <sup>[04]</sup></a>
+          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience <sup>[9+]</sup></a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        </div>
+        <a className="dark-button nav-cta" href="mailto:joseph@example.com">Let&apos;s talk <ArrowUpRight size={15} /></a>
+        <button className="menu-button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+      </nav>
+
+      <section className="hero section-pad">
+        <div className="hero-wordmark" aria-hidden="true"><span>JOSEPH</span><strong>JOSHUA</strong></div>
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">FULLSTACK WEB DEVELOPER × AI DESIGNER</p>
+            <h1>Building digital products with clarity, character, and intelligent details.</h1>
+            <p className="hero-intro">I&apos;m Joseph Joshua — a fullstack web developer and AI designer making useful, expressive experiences for ambitious teams and curious founders.</p>
+            <a href="#work" className="dark-button">Explore selected work <ArrowDownRight size={16} /></a>
+          </div>
+          <div className="portrait-wrap">
+            <div className="portrait-frame"><div className="portrait-art"><span>JJ</span></div></div>
+            <p className="portrait-note">Based in Lagos<br />Working everywhere</p>
+          </div>
+          <div className="hero-aside"><span>Scroll to explore</span><ArrowDownRight size={20} /></div>
+        </div>
+      </section>
+
+      <section id="work" className="work-section section-pad">
+        <div className="section-heading"><span className="ghost-title">PORTFOLIO</span><h2>/SELECTED WORK</h2><a href="#contact" className="outline-button">View all work <ArrowUpRight size={15} /></a></div>
+        <div className="project-grid">
+          {projects.map((project) => <article className="project-card" key={project.title}>
+            <div className={`project-image ${project.tone}`} style={{ backgroundImage: `url(${project.image})` }}><span className="project-tag">{project.tag}</span><button aria-label={`Open ${project.title}`} className="round-arrow"><ArrowUpRight size={18} /></button></div>
+            <h3>{project.title}</h3><p>{project.type}</p>
+          </article>)}
+        </div>
+      </section>
+
+      <section id="services" className="services-section section-pad">
+        <div className="section-heading simple"><span className="ghost-title">SERVICES</span><h2>/SERVICES</h2></div>
+        <div className="services-layout"><div className="service-feature"><div><p className="eyebrow">WHAT I DO</p><h3>{services[activeService][0]}</h3><p>{services[activeService][1]}</p></div><ArrowUpRight size={32} /></div><div className="service-list">{services.map(([title], index) => <button key={title} onClick={() => setActiveService(index)} className={activeService === index ? 'active' : ''}><span>{title}</span><ArrowUpRight size={22} /></button>)}</div></div>
+      </section>
+
+      <section id="experience" className="experience-section section-pad"><div className="section-heading dark-heading"><span className="ghost-title">EXPERIENCE</span><h2>/EXPERIENCE</h2><span className="experience-count">9+ years of experience</span></div><div className="experience-list">{experience.map(([company, role, dates]) => <div className="experience-row" key={company}><div><strong>{company}</strong><span>{role}</span></div><time>{dates}</time></div>)}</div></section>
+
+      <section id="contact" className="contact-section section-pad"><div className="contact-inner"><div className="availability"><span /> Available for New Project</div><h2>Have a project<br /><em>in mind?</em></h2><p>Let&apos;s make something clear, useful, and impossible to ignore.</p><a className="dark-button" href="mailto:joseph@example.com">Contact me <ArrowUpRight size={16} /></a><div className="contact-footer"><strong>Joseph Joshua</strong><SocialLinks /></div></div></section>
     </main>
   )
 }
