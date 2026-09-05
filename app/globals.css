@@ -23,6 +23,9 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 button { color: inherit; font: inherit; cursor: pointer; }
 .menu-button { transition: transform .25s ease, opacity .25s ease; }
 .menu-button:hover { opacity: .7; }
+.hero-wordmark{
+  margin-top: 50px
+}
 .menu-button svg { transition: transform .35s cubic-bezier(.2,.8,.2,1); }.menu-button.is-open svg { transform: rotate(90deg) scale(.92); }.menu-button:active { transform: scale(.9); }
 .nav-links.is-open + .nav-cta + .menu-button svg { transform: rotate(90deg); }
 .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1440px; margin: 0 auto; padding: 24px 5vw; background: color-mix(in srgb, var(--background) 88%, transparent); backdrop-filter: blur(16px); }
