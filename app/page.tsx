@@ -70,7 +70,7 @@ export default function Page() {
       </section>
 
       <section id="work" className="work-section section-pad">
-        <div className="section-heading"><span className="ghost-title">PORTFOLIO</span><h2>/SELECTED WORK</h2><a href="#contact" className="outline-button">View all work <ArrowUpRight size={15} /></a></div>
+        <div className="section-heading"><span className="ghost-title">PORTFOLIO</span><a href="#contact" className="outline-button">View all work <ArrowUpRight size={15} /></a></div>
         <div className="project-grid">
           {projects.map((project) => <article className="project-card" key={project.title}>
             <div className={`project-image ${project.tone}`} style={{ backgroundImage: `url(${project.image})` }}><span className="project-tag">{project.tag}</span><button aria-label={`Open ${project.title}`} className="round-arrow"><ArrowUpRight size={18} /></button></div>
