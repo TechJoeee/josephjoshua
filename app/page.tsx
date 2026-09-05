@@ -28,7 +28,9 @@ function SocialLinks() {
   return (
     <div className="flex flex-wrap gap-2">
       <a href="#contact" aria-label="Send Joseph an email" className="pill"><Mail size={14} /> Email</a>
-      <a href="#work" aria-label="See Joseph's work" className="pill"><span aria-hidden="true">◌</span> Dribbble</a>
+      <a href="#contact" aria-label="Find Joseph on Fiverr" className="pill"><span aria-hidden="true">fi</span> Fiverr</a>
+      <a href="#contact" aria-label="Find Joseph on X" className="pill"><span aria-hidden="true">𝕏</span> X</a>
+      <a href="#contact" aria-label="Find Joseph on GitHub" className="pill"><span aria-hidden="true">⌘</span> GitHub</a>
       <a href="#contact" aria-label="Open Joseph's LinkedIn" className="pill"><span aria-hidden="true">in</span> LinkedIn</a>
     </div>
   )
@@ -62,7 +64,7 @@ export default function Page() {
             <a href="#work" className="dark-button">Explore selected work <ArrowDownRight size={16} /></a>
           </div>
           <div className="portrait-wrap">
-            <div className="portrait-frame"><div className="portrait-art"></div></div>
+            <div className="portrait-frame"><div className="portrait-art"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-08EMTaPUi8q2s8SlNtQ9S6FyuaHyq2.png" alt="Joseph Joshua outdoors" /></div></div>
             <p className="portrait-note">Based in Lagos<br />Working everywhere</p>
           </div>
           <div className="hero-aside"></div>
@@ -70,7 +72,7 @@ export default function Page() {
       </section>
 
       <section id="work" className="work-section section-pad">
-        <div className="section-heading"><span className="ghost-title">PORTFOLIO</span><a href="#contact" className="outline-button">View all work <ArrowUpRight size={15} /></a></div>
+        <div className="section-heading"><span className="ghost-title">PORTFOLIO</span></div>
         <div className="project-grid">
           {projects.map((project) => <article className="project-card" key={project.title}>
             <div className={`project-image ${project.tone}`} style={{ backgroundImage: `url(${project.image})` }}><span className="project-tag">{project.tag}</span><button aria-label={`Open ${project.title}`} className="round-arrow"><ArrowUpRight size={18} /></button></div>
