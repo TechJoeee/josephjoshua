@@ -43,9 +43,9 @@ export default function Page() {
       <nav className="nav-shell">
         <a className="availability" href="#contact"><span /> Available for New Project</a>
         <div className={`nav-links ${menuOpen ? 'is-open' : ''}`}>
-          <a href="#work" onClick={() => setMenuOpen(false)}>Work <sup>[04]</sup></a>
-          <a href="#services" onClick={() => setMenuOpen(false)}>Services <sup>[04]</sup></a>
-          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience <sup>[9+]</sup></a>
+          <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
+          <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </div>
         <a className="dark-button nav-cta" href="mailto:joseph@example.com">Let&apos;s talk <ArrowUpRight size={15} /></a>
@@ -62,10 +62,10 @@ export default function Page() {
             <a href="#work" className="dark-button">Explore selected work <ArrowDownRight size={16} /></a>
           </div>
           <div className="portrait-wrap">
-            <div className="portrait-frame"><div className="portrait-art"><span>JJ</span></div></div>
+            <div className="portrait-frame"><div className="portrait-art"></div></div>
             <p className="portrait-note">Based in Lagos<br />Working everywhere</p>
           </div>
-          <div className="hero-aside"><span>Scroll to explore</span><ArrowDownRight size={20} /></div>
+          <div className="hero-aside"></div>
         </div>
       </section>
 
@@ -80,11 +80,11 @@ export default function Page() {
       </section>
 
       <section id="services" className="services-section section-pad">
-        <div className="section-heading simple"><span className="ghost-title">SERVICES</span><h2>/SERVICES</h2></div>
+        <div className="section-heading simple"><span className="ghost-title">SERVICES</span></div>
         <div className="services-layout"><div className="service-feature"><div><p className="eyebrow">WHAT I DO</p><h3>{services[activeService][0]}</h3><p>{services[activeService][1]}</p></div><ArrowUpRight size={32} /></div><div className="service-list">{services.map(([title], index) => <button key={title} onClick={() => setActiveService(index)} className={activeService === index ? 'active' : ''}><span>{title}</span><ArrowUpRight size={22} /></button>)}</div></div>
       </section>
 
-      <section id="experience" className="experience-section section-pad"><div className="section-heading dark-heading"><span className="ghost-title">EXPERIENCE</span><h2>/EXPERIENCE</h2><span className="experience-count">9+ years of experience</span></div><div className="experience-list">{experience.map(([company, role, dates]) => <div className="experience-row" key={company}><div><strong>{company}</strong><span>{role}</span></div><time>{dates}</time></div>)}</div></section>
+      <section id="experience" className="experience-section section-pad"><div className="section-heading dark-heading"><span className="ghost-title">EXPERIENCE</span><span className="experience-count">9+ years of experience</span></div><div className="experience-list">{experience.map(([company, role, dates]) => <div className="experience-row" key={company}><div><strong>{company}</strong><span>{role}</span></div><time>{dates}</time></div>)}</div></section>
 
       <section id="contact" className="contact-section section-pad"><div className="contact-inner"><div className="availability"><span /> Available for New Project</div><h2>Have a project<br /><em>in mind?</em></h2><p>Let&apos;s make something clear, useful, and impossible to ignore.</p><a className="dark-button" href="mailto:joseph@example.com">Contact me <ArrowUpRight size={16} /></a><div className="contact-footer"><strong>Joseph Joshua</strong><SocialLinks /></div></div></section>
     </main>
