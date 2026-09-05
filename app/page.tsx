@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowDownRight, ArrowUpRight, Mail, Menu, X } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, AtSign, Code2, Link2, Mail, Menu, X } from 'lucide-react'
 
 const projects = [
   { title: 'BloomCare — Mental Health App', type: 'Product Landing Page', image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=85', tag: 'REAL PROJECT', tone: 'dark' },
@@ -29,9 +29,9 @@ function SocialLinks() {
     <div className="flex flex-wrap gap-2">
       <a href="#contact" aria-label="Send Joseph an email" className="pill"><Mail size={14} /> Email</a>
       <a href="#contact" aria-label="Find Joseph on Fiverr" className="pill"><span aria-hidden="true">fi</span> Fiverr</a>
-      <a href="#contact" aria-label="Find Joseph on X" className="pill"><span className="social-mark" aria-hidden="true">𝕏</span> X</a>
-      <a href="#contact" aria-label="Find Joseph on GitHub" className="pill"><span className="social-mark" aria-hidden="true">⌘</span> GitHub</a>
-      <a href="#contact" aria-label="Open Joseph's LinkedIn" className="pill"><span className="social-mark" aria-hidden="true">in</span> LinkedIn</a>
+      <a href="#contact" aria-label="Find Joseph on X" className="pill"><AtSign size={14} strokeWidth={1.8} /> X</a>
+      <a href="#contact" aria-label="Find Joseph on GitHub" className="pill"><Code2 size={14} strokeWidth={1.8} /> GitHub</a>
+      <a href="#contact" aria-label="Open Joseph's LinkedIn" className="pill"><Link2 size={14} strokeWidth={1.8} /> LinkedIn</a>
     </div>
   )
 }
@@ -51,7 +51,7 @@ export default function Page() {
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </div>
         <a className="dark-button nav-cta" href="mailto:joseph@example.com">Let&apos;s talk <ArrowUpRight size={15} /></a>
-        <button className="menu-button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+        <button className={`menu-button ${menuOpen ? 'is-open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </nav>
 
       <section className="hero section-pad">
@@ -64,7 +64,7 @@ export default function Page() {
             <a href="#work" className="dark-button">Explore <ArrowDownRight size={16} /></a>
           </div>
           <div className="portrait-wrap">
-            <div className="portrait-frame"><div className="portrait-art"><img src="/joseph-portrait.png" alt="Joseph Joshua, fullstack developer and AI designer" /></div></div>
+            <div className="portrait-frame"><div className="portrait-art"><img src="/hero-visual.png" alt="Abstract interface visual for Joseph Joshua's web and AI design work" /></div></div>
             <p className="portrait-note">Based in Lagos<br />Working everywhere</p>
           </div>
           <div className="hero-aside"></div>
