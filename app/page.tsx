@@ -61,10 +61,10 @@ export default function Page() {
             <p className="eyebrow">FULLSTACK WEB DEVELOPER × AI DESIGNER</p>
             <h1>Building digital products with clarity, character, and intelligent details.</h1>
             <p className="hero-intro">I&apos;m Joseph Joshua — a fullstack web developer and AI designer making useful, expressive experiences for ambitious teams and curious founders.</p>
-            <a href="#work" className="dark-button">Explore selected work <ArrowDownRight size={16} /></a>
+            <a href="#work" className="dark-button">Explore <ArrowDownRight size={16} /></a>
           </div>
           <div className="portrait-wrap">
-            <div className="portrait-frame"><div className="portrait-art"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-08EMTaPUi8q2s8SlNtQ9S6FyuaHyq2.png" alt="Joseph Joshua outdoors" /></div></div>
+            <div className="portrait-frame"><div className="portrait-art"><img src="/joseph-portrait.png" alt="Joseph Joshua, fullstack developer and AI designer" /></div></div>
             <p className="portrait-note">Based in Lagos<br />Working everywhere</p>
           </div>
           <div className="hero-aside"></div>
