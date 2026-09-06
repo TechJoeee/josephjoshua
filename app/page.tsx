@@ -28,9 +28,8 @@ function SocialLinks() {
   return (
     <div className="flex flex-wrap gap-2">
       <a href="#contact" aria-label="Send Joseph an email" className="pill"><Mail size={14} /> Email</a>
-      <a href="#contact" aria-label="Find Joseph on Fiverr" className="pill"><span aria-hidden="true">fi</span> Fiverr</a>
-      <a href="#contact" aria-label="Find Joseph on X" className="pill"><AtSign size={14} strokeWidth={1.8} /> X</a>
-      <a href="#contact" aria-label="Find Joseph on GitHub" className="pill"><Code2 size={14} strokeWidth={1.8} /> GitHub</a>
+      <a href="https://x.com/Tech_Joee" target="_blank" rel="noreferrer" aria-label="Find Joseph on X" className="pill"><AtSign size={14} strokeWidth={1.8} /> X</a>
+      <a href="https://github.com/TechJoeee" target="_blank" rel="noreferrer" aria-label="Find Joseph on GitHub" className="pill"><Code2 size={14} strokeWidth={1.8} /> GitHub</a>
       <a href="#contact" aria-label="Open Joseph's LinkedIn" className="pill"><Link2 size={14} strokeWidth={1.8} /> LinkedIn</a>
     </div>
   )
